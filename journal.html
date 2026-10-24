@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Club Journal · Ikazuchi Racing Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/journal.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+</head>
+<body class="journal-page">
+  <div class="journal-shell">
+    <header class="journal-header">
+      <nav class="journal-nav" aria-label="Main navigation">
+        <a class="journal-brand" href="index.html#top">
+          <span class="journal-brand-icon" aria-hidden="true">雷</span>
+          <span>Ikazuchi Racing Club</span>
+        </a>
+        <div class="journal-nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#focus">Focus</a>
+          <a href="index.html#drivers">Drivers</a>
+          <a href="index.html#event-times">Event Times</a>
+          <a href="journal.html" aria-current="page">Journal</a>
+          <a href="index.html#gallery">Gallery</a>
+        </div>
+        <a class="journal-portal" href="index.html#top">Member Portal</a>
+      </nav>
+    </header>
+
+    <main>
+      <div id="journalArchivePage">
+        <section class="journal-intro" aria-labelledby="journalPageTitle">
+          <div class="journal-wrap">
+            <div class="journal-intro-meta">
+              <p class="journal-eyebrow">The paddock / Community log</p>
+              <span>Ikazuchi Racing Club</span>
+            </div>
+            <div class="journal-intro-layout">
+              <h1 class="journal-page-title" id="journalPageTitle">The club<br><span>journal</span></h1>
+              <p class="journal-intro-copy">Race nights, club meetups, milestones, and the moments between runs. A shared logbook from the people who make Ikazuchi.</p>
+            </div>
+            <div class="journal-intro-bottom"><span>Stories from the team</span><span>01 / Open log</span></div>
+          </div>
+        </section>
+
+        <div class="journal-wrap journal-content">
+          <p class="journal-status" id="archiveStatus" role="status" aria-live="polite">Loading journal entries...</p>
+
+          <article class="journal-feature" id="journalFeatured" aria-label="Latest journal entry">
+            <div class="journal-feature-copy">
+              <p class="journal-kicker" id="featuredKicker">Latest entry</p>
+              <h2 id="featuredTitle">Loading journal...</h2>
+              <p class="journal-feature-excerpt" id="featuredExcerpt">The latest story from the club journal will appear here.</p>
+              <div class="journal-feature-meta" id="featuredMeta"></div>
+              <a class="journal-read-link" id="featuredLink" href="#" hidden>Read full entry <span aria-hidden="true">&rarr;</span></a>
+            </div>
+            <div class="journal-feature-media" id="featuredMedia"></div>
+          </article>
+
+          <section class="journal-archive" aria-labelledby="archiveTitle">
+            <div class="journal-archive-heading">
+              <div>
+                <p class="journal-kicker">From the crew</p>
+                <h2 id="archiveTitle">Previous entries</h2>
+              </div>
+              <p class="journal-archive-note">Member stories, ordered newest first</p>
+            </div>
+            <div class="journal-entry-list" id="journalEntries"></div>
+          </section>
+        </div>
+      </div>
+
+      <section class="journal-article-page" id="journalArticlePage" hidden>
+        <div class="journal-wrap journal-article-wrap">
+          <a class="journal-back-link" href="journal.html"><span aria-hidden="true">&larr;</span> Back to the journal</a>
+          <p class="journal-kicker">The paddock / Journal entry</p>
+          <h1 class="journal-article-title" id="articleTitle">Loading entry...</h1>
+          <p class="journal-article-meta" id="articleMeta"></p>
+          <div class="journal-article-photo" id="articlePhoto" hidden></div>
+          <article class="journal-article-body" id="articleBody"></article>
+          <p class="journal-status" id="articleStatus" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="journal-footer">
+      <a href="index.html#top"><strong>Ikazuchi</strong> / Racing Club</a>
+    </footer>
+  </div>
+
+  <script>
+    const archivePage = document.getElementById('journalArchivePage');
+    const articlePage = document.getElementById('journalArticlePage');
+    const archiveStatus = document.getElementById('archiveStatus');
+    const featuredTitle = document.getElementById('featuredTitle');
+    const featuredExcerpt = document.getElementById('featuredExcerpt');
+    const featuredMeta = document.getElementById('featuredMeta');
+    const featuredLink = document.getElementById('featuredLink');
+    const featuredMedia = document.getElementById('featuredMedia');
+    const journalEntries = document.getElementById('journalEntries');
+    const articleTitle = document.getElementById('articleTitle');
+    const articleMeta = document.getElementById('articleMeta');
+    const articlePhoto = document.getElementById('articlePhoto');
+    const articleBody = document.getElementById('articleBody');
+    const articleStatus = document.getElementById('articleStatus');
+
+    function formatDate(value) {
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return '';
+      return date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function getExcerpt(value, limit = 210) {
+      const text = String(value || '').replace(/\s+/g, ' ').trim();
+      if (text.length <= limit) return text;
+      return text.slice(0, limit).trimEnd() + '…';
+    }
+
+    function entryUrl(id) {
+      return 'journal.html?id=' + encodeURIComponent(id);
+    }
+
+    function addMeta(parent, value) {
+      if (!value) return;
+      const item = document.createElement('span');
+      item.textContent = value;
+      parent.appendChild(item);
+    }
+
+    function safeImageUrl(value) {
+      if (!value) return '';
+      try {
+        const url = new URL(value, window.location.href);
+        return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : '';
+      } catch {
+        return '';
+      }
+    }
+
+    function renderFeatured(entry) {
+      document.getElementById('featuredKicker').textContent = 'Latest entry';
+      featuredTitle.textContent = entry.title || 'Untitled journal entry';
+      featuredExcerpt.textContent = getExcerpt(entry.body) || 'Open this journal entry to read the full story.';
+      featuredMeta.replaceChildren();
+      addMeta(featuredMeta, entry.author ? 'Posted by ' + entry.author : '');
+      addMeta(featuredMeta, formatDate(entry.created_at));
+      featuredLink.href = entryUrl(entry.id);
+      featuredLink.hidden = false;
+
+      featuredMedia.replaceChildren();
+      featuredMedia.classList.remove('has-photo');
+      const imageUrl = safeImageUrl(entry.image_url);
+      if (imageUrl) {
+        const image = document.createElement('img');
+        image.src = imageUrl;
+        image.alt = entry.title ? 'Photo for ' + entry.title : 'Journal entry photo';
+        image.loading = 'lazy';
+        featuredMedia.appendChild(image);
+        featuredMedia.classList.add('has-photo');
+      }
+    }
+
+    function renderEntry(entry, index) {
+      const link = document.createElement('a');
+      link.className = 'journal-entry-row';
+      link.href = entryUrl(entry.id);
+
+      const number = document.createElement('span');
+      number.className = 'journal-entry-number';
+      number.textContent = String(index + 1).padStart(2, '0');
+
+      const copy = document.createElement('span');
+      copy.className = 'journal-entry-copy';
+
+      const title = document.createElement('span');
+      title.className = 'journal-entry-title';
+      title.textContent = entry.title || 'Untitled journal entry';
+
+      const excerpt = document.createElement('span');
+      excerpt.className = 'journal-entry-excerpt';
+      excerpt.textContent = getExcerpt(entry.body, 150);
+
+      copy.append(title, excerpt);
+
+      const meta = document.createElement('span');
+      meta.className = 'journal-entry-meta';
+      meta.textContent = [entry.author || '', formatDate(entry.created_at)].filter(Boolean).join(' · ');
+
+      const arrow = document.createElement('span');
+      arrow.className = 'journal-entry-arrow';
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '↗';
+
+      link.append(number, copy, meta, arrow);
+      return link;
+    }
+
+    function renderEmptyArchive() {
+      featuredTitle.textContent = 'The journal is open';
+      featuredExcerpt.textContent = 'New stories from the team will appear here when members post them.';
+      featuredMeta.replaceChildren();
+      featuredLink.hidden = true;
+
+      const empty = document.createElement('div');
+      empty.className = 'journal-empty';
+      const heading = document.createElement('h3');
+      heading.textContent = 'No journal entries yet';
+      const message = document.createElement('p');
+      message.textContent = 'When the crew shares a story, it will be collected here.';
+      empty.append(heading, message);
+      journalEntries.replaceChildren(empty);
+    }
+
+    function renderArchiveError(message) {
+      archiveStatus.textContent = message;
+      archiveStatus.classList.add('is-error');
+      featuredTitle.textContent = 'Journal unavailable';
+      featuredExcerpt.textContent = 'The club journal could not be loaded right now.';
+      featuredMeta.replaceChildren();
+      featuredLink.hidden = true;
+      journalEntries.replaceChildren();
+    }
+
+    async function loadArchive() {
+      if (typeof supabaseClient === 'undefined' || !supabaseClient) {
+        renderArchiveError('The journal connection is not configured.');
+        return;
+      }
+
+      const { data, error } = await supabaseClient
+        .from('journals')
+        .select('id, title, author, body, image_url, created_at')
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        renderArchiveError('Journal entries could not be loaded. Please try again later.');
+        return;
+      }
+
+      const entries = data || [];
+      archiveStatus.hidden = true;
+      if (!entries.length) {
+        renderEmptyArchive();
+        return;
+      }
+
+      renderFeatured(entries[0]);
+      journalEntries.replaceChildren();
+      if (entries.length === 1) {
+        const empty = document.createElement('p');
+        empty.className = 'journal-list-note';
+        empty.textContent = 'More entries will appear here as the club journal grows.';
+        journalEntries.appendChild(empty);
+        return;
+      }
+
+      entries.slice(1).forEach((entry, index) => journalEntries.appendChild(renderEntry(entry, index + 1)));
+    }
+
+    function showArticleMessage(title, message) {
+      articleTitle.textContent = title;
+      articleMeta.textContent = '';
+      articleBody.textContent = '';
+      articlePhoto.hidden = true;
+      articlePhoto.replaceChildren();
+      articleStatus.textContent = message;
+      articleStatus.classList.add('is-error');
+      articlePage.hidden = false;
+      archivePage.hidden = true;
+    }
+
+    async function loadArticle(id) {
+      archivePage.hidden = true;
+      articlePage.hidden = false;
+
+      if (typeof supabaseClient === 'undefined' || !supabaseClient) {
+        showArticleMessage('Journal unavailable', 'The journal connection is not configured.');
+        return;
+      }
+
+      const { data, error } = await supabaseClient
+        .from('journals')
+        .select('id, title, author, body, image_url, created_at')
+        .eq('id', id)
+        .maybeSingle();
+
+      if (error || !data) {
+        showArticleMessage('Journal not found', 'This entry may have been removed. Return to the journal archive to browse other posts.');
+        return;
+      }
+
+      document.title = (data.title || 'Journal entry') + ' · Ikazuchi Racing Club';
+      articleTitle.textContent = data.title || 'Untitled journal entry';
+      articleMeta.textContent = [data.author ? 'Posted by ' + data.author : '', formatDate(data.created_at)].filter(Boolean).join(' · ');
+      articleBody.textContent = data.body || '';
+
+      const imageUrl = safeImageUrl(data.image_url);
+      if (imageUrl) {
+        const image = document.createElement('img');
+        image.src = imageUrl;
+        image.alt = data.title ? 'Photo for ' + data.title : 'Journal entry photo';
+        image.loading = 'lazy';
+        articlePhoto.replaceChildren(image);
+        articlePhoto.hidden = false;
+      } else {
+        articlePhoto.hidden = true;
+        articlePhoto.replaceChildren();
+      }
+      articleStatus.textContent = '';
+    }
+
+    const requestedId = new URLSearchParams(window.location.search).get('id');
+    if (requestedId) {
+      loadArticle(requestedId);
+    } else {
+      loadArchive();
+    }
+  </script>
+</body>
+</html>

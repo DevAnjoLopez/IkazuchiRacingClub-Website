@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dznuts · Ikazuchi Racing Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/driver.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+</head>
+<body>
+  <div class="site-shell" id="top">
+    <header class="site-header">
+      <nav class="nav-row driver-nav" aria-label="Main navigation">
+        <a href="index.html" class="club-mark"><span>Ikazuchi</span><span>Racing Club</span></a>
+        <a href="index.html" class="back-link">Back to club</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="driver-hero" style="--driver-photo: url('/files/dznuts_frontpage.png');" aria-labelledby="driver-title">
+        <div class="driver-hero-info">
+          <p class="hero-kicker">Driver profile</p>
+          <span class="badge-role">Leader</span>
+          <h1 class="driver-title" id="driver-title">Dznuts</h1>
+          <div class="hero-bottom">
+           
+            <a class="scroll-link" href="#events">View event times <span>↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="driver-description" id="driver-description" aria-labelledby="driver-description-title">
+  <div class="driver-description-inner">
+          <aside class="driver-highlight" aria-label="Driver role">
+            <p class="highlight-label">Driver role</p>
+            <img class="highlight-photo" src="files/dznuts_profile.png" alt="Dznuts profile photo">
+            <span class="highlight-input">Keyboard</span>
+          </aside>
+    <div class="driver-description-content">
+      <p class="driver-description-label">Driver story</p>
+      <h2 class="driver-description-title" id="driver-description-title">Dznuts</h2>
+      <p class="driver-bio">Dznuts is widely regarded as one of the most tenacious competitors on the grid, defined by an unyielding refusal to give up regardless of the odds. Known for his intense focus and analytical approach to driving, he treats every lap as an opportunity to test the absolute mechanical limits of his machine. Rather than relying on conservative lines to secure safe finishes, Dznuts consistently pushes his vehicle to the verge of losing traction, riding the thin line between total control and chaos.</p>
+            </p><p class="driver-bio">What makes Dznuts particularly impressive within the racing community is his exceptional mastery of mouse steering controls. While many competitive drivers rely on wheels or gamepads, he has perfected mouse input into a surgical weapon. His ability to execute millimeter-precise cornering entries, mid-corner adjustments, and smooth throttle transitions with a mouse sets him apart as a rare talent.</p>
+            <p class="driver-bio">His relentless work ethic and blistering pace were showcased on the international stage during Japan Grand Touring Season 3, where he fought through an elite grid to claim an outstanding 2nd place podium finish. Regularly putting down razor-thin lap times that rival top-tier drivers like KaizenSouzke, Dznuts remains an active powerhouse and a benchmark for speed in the competitive scene.</p>
+    </div>
+  </div>
+</section>
+
+      <section class="laptimes-section" id="events" aria-labelledby="events-title">
+        <div class="events-inner">
+          <div class="events-head">
+            <div>
+              <p class="eyebrow">Club results</p>
+              <h2 class="events-title" id="events-title">Event times</h2>
+            </div>
+            <p class="events-description">Map, race, car, input method, time, and post date for this driver.</p>
+          </div>
+          <div id="laptimesContainer">
+            <p>Loading event times…</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="mono footer-name">Ikazuchi Racing Club</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/driver-laptimes.js"></script>
+</body>
+</html>
+
+
+

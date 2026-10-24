@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catwaffles · Ikazuchi Racing Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/driver.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <nav class="nav-row driver-nav" aria-label="Main navigation">
+        <a href="index.html" class="club-mark"><span>Ikazuchi</span><span>Racing Club</span></a>
+        <a href="index.html" class="back-link">Back to club</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="driver-hero" style="--driver-photo: url('/files/catwaffles_frontpage.png');" aria-labelledby="driver-title">
+        <div class="driver-hero-info">
+          <p class="hero-kicker">Driver profile</p>
+          <span class="badge-role">Member</span>
+          <h1 class="driver-title" id="driver-title">Catwaffles</h1>
+          <div class="hero-bottom">
+            <a class="scroll-link" href="#events">View event times <span>↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="driver-description" id="driver-description" aria-labelledby="driver-description-title">
+  <div class="driver-description-inner">
+          <aside class="driver-highlight" aria-label="Driver role">
+            <p class="highlight-label">Driver role</p>
+            <img class="highlight-photo" src="files/catwaffles_profile.png" alt="Catwaffles profile photo">
+            <span class="highlight-input">Keyboard</span>
+          </aside>
+    <div class="driver-description-content">
+      <p class="driver-description-label">Driver story</p>
+      <h2 class="driver-description-title" id="driver-description-title">Catwaffles</h2>
+      <p class="driver-bio">Representing a new generation of talent, Catwaffles is one of the newest additions to team <strong>Ikazuchi</strong>. Fueled by a lifelong fascination with automobiles and motorsport culture, he brings enthusiasm, curiosity, and energy to the roster.</p>
+<p class="driver-bio">Catwaffles is focused on building a strong foundation for his racing career. He spends his track time studying lines, learning the routes, and observing the veteran drivers within Ikazuchi. His humble mindset and willingness to absorb knowledge make him a promising driver to watch as he steadily gains battle experience.</p>
+</div>
+  </div>
+</section>
+
+      <section class="laptimes-section" id="events" aria-labelledby="events-title">
+        <div class="events-inner">
+          <div class="events-head">
+            <div>
+              <p class="eyebrow">Club results</p>
+              <h2 class="events-title" id="events-title">Event times</h2>
+            </div>
+            <p class="events-description">Map, race, car, input method, time, and post date for this driver.</p>
+          </div>
+          <div id="laptimesContainer">
+            <p>Loading event times…</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="mono footer-name">Ikazuchi Racing Club</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/driver-laptimes.js"></script>
+</body>
+</html>
+
+
+

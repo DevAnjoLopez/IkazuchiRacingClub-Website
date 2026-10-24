@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KaizenSouzke · Ikazuchi Racing Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/driver.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+</head>
+<body>
+  <div class="site-shell" id="top">
+    <header class="site-header">
+      <nav class="nav-row driver-nav" aria-label="Main navigation">
+        <a href="index.html" class="club-mark"><span>Ikazuchi</span><span>Racing Club</span></a>
+        <a href="index.html" class="back-link">Back to club</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="driver-hero" style="--driver-photo: url('/files/race.png');" aria-labelledby="driver-title">
+        <div class="driver-hero-info">
+          <p class="hero-kicker">Driver profile</p>
+          <span class="badge-role">Leader</span>
+          <h1 class="driver-title" id="driver-title">KaizenSouzke</h1>
+          <div class="hero-bottom">
+           
+            <a class="scroll-link" href="#events">View event times <span>↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="driver-description" id="driver-description" aria-labelledby="driver-description-title">
+  <div class="driver-description-inner">
+          <aside class="driver-highlight" aria-label="Driver role">
+            <p class="highlight-label">Driver role</p>
+            <img class="highlight-photo" src="files/kaizensouzke_profile.png" alt="KaizenSouzke profile photo">
+            <span class="highlight-input">Keyboard</span>
+          </aside>
+    <div class="driver-description-content">
+      <p class="driver-description-label">Driver story</p>
+      <h2 class="driver-description-title" id="driver-description-title">KaizenSouzke</h2>
+      <p class="driver-bio">Kaizen is one of the toughest drivers in  the club, known for his competitive spirit and skillful driving. He holds a world record for the fastest laptime in a Mitsubishi Lancer Evolution VI with keyboard controls, with a time of 4:54.088 Goliath Marathon event time in Ichikawa Region. He also participated in various racing events and competitions in Midnight Racing: Tokyo, such as in Japan Grand Touring Championship, and in Midnight Battle Series.
+            </p><p class="driver-bio">Kaizen wasn't always a racing enthusiast. He always had the passion for cars since his childhood. His father usually take him to car shows and races when he was young. He was drawn to the thrill of speed and the challenge of mastering different tracks, vehicles, and the challenge of competing against other skilled drivers. He has been obsessed with lowering his laptimes and improving his skills, and has become a respected member of the Ikazuchi Racing Club. With over 10,000 laps and 4 years of experience, his consistency made a name for himself in the community. He first joined in competitive racing in 2023 in Midnight Battle Series, where he placed 1st in a 1v1 race against MrTen in a same car, Mazda RX7 FD3S. </p><p class="driver-bio">Kaizen also participated in the Japan Grand Touring Championship, where he secured a podium finish placing 2nd in Ichikawa Region, podium finish placing 2nd in Mt. Otsuki, and a podium finish placing 2nd in Tsukuba Circuit. Now, he continues to push his limits by lowering his laptimes and competing in various racing events, always striving to be the best driver he can be. He is a true inspiration to all members of the Ikazuchi Racing Club, and his dedication and passion for racing is evident in everything he does.</p>
+    </div>
+  </div>
+</section>
+
+      <section class="laptimes-section" id="events" aria-labelledby="events-title">
+        <div class="events-inner">
+          <div class="events-head">
+            <div>
+              <p class="eyebrow">Club results</p>
+              <h2 class="events-title" id="events-title">Event times</h2>
+            </div>
+            <p class="events-description">Map, race, car, input method, time, and post date for this driver.</p>
+          </div>
+          <div id="laptimesContainer">
+            <p>Loading event times…</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="mono footer-name">Ikazuchi Racing Club</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/driver-laptimes.js"></script>
+</body>
+</html>
+
+
+

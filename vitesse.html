@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitesse · Ikazuchi Racing Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/driver.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <nav class="nav-row driver-nav" aria-label="Main navigation">
+        <a href="index.html" class="club-mark"><span>Ikazuchi</span><span>Racing Club</span></a>
+        <a href="index.html" class="back-link">Back to club</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="driver-hero" style="--driver-photo: url('/files/vitesse_frontpage.png');" aria-labelledby="driver-title">
+        <div class="driver-hero-info">
+          <p class="hero-kicker">Driver profile</p>
+          <span class="badge-role">Member</span>
+          <h1 class="driver-title" id="driver-title">Vitesse</h1>
+          <div class="hero-bottom">
+            <a class="scroll-link" href="#events">View event times <span>↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="driver-description" id="driver-description" aria-labelledby="driver-description-title">
+  <div class="driver-description-inner">
+          <aside class="driver-highlight" aria-label="Driver role">
+            <p class="highlight-label">Driver role</p>
+            <img class="highlight-photo" src="files/vitesse_profile.png" alt="Vitesse profile photo">
+            <span class="highlight-input">Keyboard</span>
+          </aside>
+    <div class="driver-description-content">
+      <p class="driver-description-label">Driver story</p>
+      <h2 class="driver-description-title" id="driver-description-title">Vitesse</h2>
+      <p class="driver-bio">“I don’t keep up with my rivals, ’cause my rivals keep up with me.”</p>
+      <p class="driver-bio">Vitesse, better known to everyone as Sally, is famous for his iconic taglines, questionable antics, impeccable fashion sense, and extensive collection of burner phones. A man from the lower side of Beverly Hills, he lives like he belongs in the Stone Age while somehow owning every designer bag he can get his hands on in Japan.</p>
+      <p class="driver-bio">After a brief hiatus from the team, he’s recently been spotted climbing the billboards once again, clocking impressive times and making his long-awaited comeback as a newly renowned racer. Known for taking daring cars wherever he goes, you might catch him cruising through Tokyo in his Brooklands one moment, then tearing up the streets of Ichikawa in his Diablo VT the next.</p>
+      <p class="driver-bio">He may be rocking pink sweatsuits, but never let the outfit fool you.</p>
+      <p class="driver-bio"><strong>HE'S ON IT, HUNNI.</strong></p>
+    </div>
+  </div>
+</section>
+
+      <section class="laptimes-section" id="events" aria-labelledby="events-title">
+        <div class="events-inner">
+          <div class="events-head">
+            <div>
+              <p class="eyebrow">Club results</p>
+              <h2 class="events-title" id="events-title">Event times</h2>
+            </div>
+            <p class="events-description">Map, race, car, input method, time, and post date for this driver.</p>
+          </div>
+          <div id="laptimesContainer">
+            <p>Loading event times…</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="mono footer-name">Ikazuchi Racing Club</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/driver-laptimes.js"></script>
+</body>
+</html>
+
+
+

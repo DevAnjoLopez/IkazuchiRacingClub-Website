@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mrmyth456 · Ikazuchi Racing Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/driver.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <nav class="nav-row driver-nav" aria-label="Main navigation">
+        <a href="index.html" class="club-mark"><span>Ikazuchi</span><span>Racing Club</span></a>
+        <a href="index.html" class="back-link">Back to club</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="driver-hero" style="--driver-photo: url('/files/toka_frontpage.png');" aria-labelledby="driver-title">
+        <div class="driver-hero-info">
+          <p class="hero-kicker">Driver profile</p>
+          <span class="badge-role">Member</span>
+          <h1 class="driver-title" id="driver-title">Mrmyth456</h1>
+          <div class="hero-bottom">
+            <a class="scroll-link" href="#events">View event times <span>↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="driver-description" id="driver-description" aria-labelledby="driver-description-title">
+  <div class="driver-description-inner">
+          <aside class="driver-highlight" aria-label="Driver role">
+            <p class="highlight-label">Driver role</p>
+            <img class="highlight-photo" src="files/toka_profile.png" alt="Mrmyth456 profile photo">
+            <span class="highlight-input">Wheel</span>
+          </aside>
+    <div class="driver-description-content">
+      <p class="driver-description-label">Driver story</p>
+      <h2 class="driver-description-title" id="driver-description-title">Mrmyth456</h2>
+      <p class="driver-bio">MrMyth456 stands as a legendary figure in the Filipino racing scene, with a legacy built on raw speed, extraordinary discipline, and surgical line precision. During his peak active years, he was a quiet force on the track who let his lap times do the talking. His understanding of car dynamics helped him carry astonishing momentum through high-speed sections without unsettling the chassis.</p>
+
+<p class="driver-bio">MrMyth456's name became synonymous with dominance on the technical <strong>C1 Highway Route</strong>. His crowning achievement, a time of <strong>2:58.865 on the Clockwise Loop</strong>, remains one of the most respected time-attack benchmarks in the community, a testament to his execution through narrow walls and high-speed sweepers.</p>
+<p class="driver-bio">Though retired from competitive street battles in Midnight Racing: Tokyo, his love for motorsports remains strong. He continues to apply his speed and precision across other racing titles, frequently turning laps in <strong>Assetto Corsa</strong>.</p>
+</div>
+  </div>
+</section>
+
+      <section class="laptimes-section" id="events" aria-labelledby="events-title">
+        <div class="events-inner">
+          <div class="events-head">
+            <div>
+              <p class="eyebrow">Club results</p>
+              <h2 class="events-title" id="events-title">Event times</h2>
+            </div>
+            <p class="events-description">Map, race, car, input method, time, and post date for this driver.</p>
+          </div>
+          <div id="laptimesContainer">
+            <p>Loading event times…</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="mono footer-name">Ikazuchi Racing Club</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/driver-laptimes.js"></script>
+</body>
+</html>
+
+
+

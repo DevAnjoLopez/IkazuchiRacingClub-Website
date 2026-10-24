@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ikazuchi Racing Club</title>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Michroma&display=swap"
+    rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/club-data.js"></script>
+</head>
+
+<body>
+
+  <div class="site-shell">
+
+<header class="site-header">
+
+      <nav class="nav-row" aria-label="Main navigation">
+
+<a href="#top" class="brand focus-ring">
+          <span class="brand-icon">雷</span>
+          <span class="brand-name">Ikazuchi Racing Club</span>
+        </a>
+
+<div class="nav-links">
+          <a href="#about" class="nav-link focus-ring">ABOUT</a>
+          <a href="#focus" class="nav-link focus-ring">FOCUS</a>
+          <a href="#drivers" class="nav-link focus-ring">DRIVER FILE</a>
+          <a href="#event-times" class="nav-link focus-ring">EVENT TIMES</a>
+          <a href="#journal" class="nav-link focus-ring">JOURNAL</a>
+          <a href="#gallery" class="nav-link focus-ring">GALLERY</a>
+        </div>
+
+        <button id="loginBtn" class="nav-login">Access Code</button>
+        <button id="mobileMenuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+
+      </nav>
+
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#drivers">Driver File</a>
+        <a href="#event-times">Event Times</a>
+        <a href="#journal">Journal</a>
+        <a href="#gallery">Gallery</a>
+      </nav>    </header>
+
+<main id="top">
+
+<section class="hero">
+
+        <img loading="lazy" class="hero-image" src="files/race.png" alt="Ikazuchi drivers on track">
+
+        <div class="image-shade"></div>
+        <div class="grid-lines"></div>
+
+        <div class="hero-content">
+          <div class="hero-text">
+
+            <p class="reveal mono hero-kicker" style="animation-delay: .08s;">
+              Midnight Racing · Tokyo
+            </p>
+
+            <h1 class="reveal hero-title" style="animation-delay: .16s;">
+              Ikazuchi<br>
+              Racing Club
+            </h1>
+
+            <p class="reveal hero-subtitle" style="animation-delay: .26s;">
+              Driven by the storm.
+            </p>
+
+            <a href="#drivers" class="focus-ring reveal hero-button" style="animation-delay: .35s;">
+              <span>Discover the team</span>
+            </a>
+
+          </div>
+        </div>
+
+      </section>
+
+<section id="about" class="about-section">
+
+        <div class="about-container">
+
+          <div class="about-image-wrapper">
+            <img loading="lazy" class="about-image" src="files/meet.png" alt="Ikazuchi Racing Club">
+            <div class="est-tag">
+              <span class="mono">EST. 2024</span>
+            </div>
+          </div>
+
+          <div class="about-content">
+
+            <p class="section-label mono">The club</p>
+
+            <h2 class="display section-title">Driven by the storm.</h2>
+
+            <p class="about-description">
+              Ikazuchi Racing Club was established in 2024 by a group
+              of passionate drivers who share a love for racing and
+              the thrill of the track.
+
+              Our team is dedicated to pushing the limits of
+              performance and skill, competing in various racing
+              events and tournaments in the Midnight Racing: Tokyo
+              Community.
+
+              We believe that racing brings people together, Midnight Racing or not, and we
+              strive to create a welcoming and inclusive environment
+              for all members, regardless of experience level.
+
+              Witness the power of the lightning 
+            </p>
+
+            <div class="about-stats">
+              <div class="stat">
+                <p class="display stat-number">11</p>
+                <p class="mono stat-label">Drivers</p>
+              </div>
+              <div class="stat">
+                <p class="display stat-number">2024</p>
+                <p class="mono stat-label">Founded</p>
+              </div>
+              <div class="stat">
+                <p class="display stat-number">72</p>
+                <p class="mono stat-label">Race wins</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+<section id="focus" class="focus-section">
+  <div class="section-container">
+    <div class="section-head">
+      <div>
+        <p class="section-label mono">In the workshop</p>
+        <h2 class="display section-title">What Drives Us</h2>
+      </div>
+      <p class="section-note">A close look at the people, practice, and shared moments behind every race weekend.</p>
+    </div>
+    <div class="focus-grid">
+      <article class="focus-card">
+        <div class="focus-image"><img loading="lazy" src="files/Jgt2.png" alt="cars on the circuit"></div>
+        <div class="focus-body"><p class="card-index">01 / Track</p><h3>Racecraft sessions</h3><p>Practice built around awareness, consistency, and clean lines through every corner.</p></div>
+      </article>
+      <article class="focus-card">
+        <div class="focus-image"><img loading="lazy" src="files/s13s.png" alt="Ikazuchi drivers racing in JGT competition"></div>
+        <div class="focus-body"><p class="card-index">02 / Garage</p><h3>Built together</h3><p>Drivers share their setups, knowledge, and progress as the club keeps improving.</p></div>
+      </article>
+      <article class="focus-card">
+        <div class="focus-image"><img loading="lazy" src="files/podium.png" alt="Ikazuchi race weekend"></div>
+        <div class="focus-body"><p class="card-index">03 / Culture</p><h3>Shared momentum</h3><p>Every contribution earns its place in the paddock, on track and off.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="drivers" class="drivers-section">
+  <div class="section-container">
+    <p class="section-label mono">People of Ikazuchi</p>
+    <h2 class="display section-title">Driver File</h2>
+    <p class="section-description">
+      Click a driver to view their leaderboard laptimes. Post, edit, and remove entries here from the driver portal.
+    </p>
+    <div class="driver-grid">
+      <a class="driver-card" href="kaizen-souzke.html">
+        <img src="files/kaizensouzke_profile.png" alt="KaizenSouzke">
+        <div class="driver-info">
+          <span class="driver-role">Club Leader</span>
+          <h3>KaizenSouzke</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="hieu-harry.html">
+        <img src="files/race.png" alt="HieuHarry">
+        <div class="driver-info">
+          <span class="driver-role">Driver</span>
+          <h3>HieuHarry</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="dznuts.html">
+        <img src="files/dznuts_profile.png" alt="Dznuts">
+        <div class="driver-info">
+          <span class="driver-role">Driver</span>
+          <h3>Dznuts</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="Cedrick.html">
+        <img src="files/race.png" alt="CedrickAdik08">
+        <div class="driver-info">
+          <span class="driver-role">Driver</span>
+          <h3>CedrickAdik08</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="Toka.html">
+        <img src="files/toka_profile.png" alt="Mrmyth456">
+        <div class="driver-info">
+          <span class="driver-role">Driver</span>
+          <h3>Mrmyth456</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="vitesse.html">
+        <img src="files/vitesse_profile.png" alt="Vitesse">
+        <div class="driver-info">
+          <span class="driver-role">Driver</span>
+          <h3>Vitesse</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="adamgamerr4.html">
+        <img src="files/adam_profile.png" alt="AdamGamerR4">
+        <div class="driver-info">
+          <span class="driver-role">Driver</span>
+          <h3>AdamGamerR4</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="wahhfeine.html">
+        <img src="files/wahhfeine_profile.png" alt="Wahhfeine">
+        <div class="driver-info">
+          <span class="driver-role">Driver</span>
+          <h3>Wahhfeine</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="catwaffles.html">
+        <img src="files/catwaffles_profile.png" alt="Catwaffles">
+        <div class="driver-info">
+          <span class="driver-role">Driver</span>
+          <h3>Catwaffles</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="mrtracer.html">
+        <img src="files/mrtracer_profile.png" alt="MrTracer">
+        <div class="driver-info">
+          <span class="driver-role">Driver</span>
+          <h3>MrTracer</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="brrtbrrt.html">
+        <img src="files/brrtbrrt_profile.png" alt="BrrtBrrt">
+        <div class="driver-info">
+          <span class="driver-role">Media · BrrtBrrt Shots</span>
+          <h3>BrrtBrrt</h3>
+        </div>
+      </a>
+      <a class="driver-card" href="bighotbmxboy.html">
+        <img src="files/bighotbmxboy_profile.png" alt="BigHotBmxBoy">
+        <div class="driver-info">
+          <span class="driver-role">Media · Pancake Visuals</span>
+          <h3>BigHotBmxBoy</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="event-times" class="event-times-section">
+  <div class="section-container">
+    <div class="section-head">
+      <div>
+        <p class="section-label mono">Official Runs</p>
+        <h2 class="display section-title">Event Times</h2>
+      </div>
+      <p class="section-note">Browse leaderboard runs by driver, map, race, car, input, and date posted.</p>
+    </div>
+    <div class="run-filters">
+      <label class="run-filter" for="runFilterDriver">Driver<select id="runFilterDriver"><option value="">All drivers</option></select></label>
+      <label class="run-filter" for="runFilterMap">Map<select id="runFilterMap"><option value="">All maps</option></select></label>
+      <label class="run-filter" for="runFilterRace">Race<select id="runFilterRace"><option value="">All races</option></select></label>
+      <label class="run-filter" for="runFilterInput">Input<select id="runFilterInput"><option value="">All inputs</option></select></label>
+    </div>
+    <div class="run-tools"><span id="officialRunsStatus" role="status" aria-live="polite">Loading event times...</span><button id="refreshOfficialRuns" class="run-refresh" type="button">Refresh times</button></div>
+    <div class="run-table-wrap">
+      <table class="run-table">
+        <thead><tr><th>Name</th><th>Map</th><th>Race</th><th>Car</th><th>Leaderboard laptime</th><th>Input</th><th>Date posted</th></tr></thead>
+        <tbody id="officialRunsBody"><tr><td colspan="7">Loading event times...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section id="my-laptimes" class="laptimes-manage-section" style="display:none">
+        <div class="section-container">
+
+          <div class="dash-head">
+            <div>
+              <p class="section-label mono">Driver portal</p>
+              <h2 class="display section-title">Manage leaderboard laptimes</h2>
+              <p class="section-description" id="loggedInAs"></p>
+            </div>
+            <button id="logoutBtn" class="logout-btn">Log out</button>
+          </div>
+
+          <div class="dash-tabs">
+            <button type="button" class="dash-tab on" data-tab="laps">Leaderboard laptimes</button>
+            <button type="button" class="dash-tab" data-tab="journals">Journals</button>
+          </div>
+
+<div id="panelLaps">
+
+            <div class="dash-card">
+              <h3 class="dash-card-title">Post a leaderboard laptime</h3>
+              <form id="lapTimeForm" class="laptime-form">
+                <label class="field">
+                  <span>Name</span>
+                  <select id="ltDriver" required>
+                    <option value="" disabled selected>Select driver</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Map</span>
+                  <select id="ltTrack" required>
+                    <option value="" disabled selected>Select map</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Race</span>
+                  <select id="ltRace" required disabled>
+                    <option value="" disabled selected>Select a map first</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Car</span>
+                  <input type="text" id="ltCar" list="carList" placeholder="Choose or type a car" autocomplete="off" required>
+                  <datalist id="carList"></datalist>
+                </label>
+                <label class="field">
+                  <span>Leaderboard laptime</span>
+                  <input type="text" id="ltTime" placeholder="1:23.456" inputmode="numeric"
+                         pattern="\d{1,2}:\d{2}\.\d{3}" title="Format: 1:23.456 (minutes:seconds.milliseconds)" required>
+                </label>
+                <label class="field">
+                  <span>Input</span>
+                  <select id="ltInput" required>
+                    <option value="" disabled selected>Select input</option>
+                  </select>
+                </label>
+                <button type="submit" class="laptime-submit">POST LEADERBOARD LAPTIME</button>
+              </form>
+            
+              <p id="formMsg" class="form-msg"></p>
+            </div>
+
+            <div class="dash-card">
+              <div class="dash-list-head">
+                <h3 class="dash-card-title">Posted leaderboard laptimes</h3>
+                <select id="filterDriver" class="dash-filter" aria-label="Filter by driver">
+                  <option value="">All drivers</option>
+                </select>
+              </div>
+              <div id="myLapTimesList" class="my-laptimes-list"></div>
+            </div>
+
+          </div>
+
+<div id="panelJournals" style="display:none">
+
+            <div class="dash-card">
+              <h3 class="dash-card-title">Post a journal</h3>
+              <form id="journalForm" class="journal-form">
+                <label class="field">
+                  <span>Title</span>
+                  <input type="text" id="jTitle" maxlength="120" placeholder="Headline" required>
+                </label>
+                <label class="field">
+                  <span>Posted by</span>
+                  <select id="jAuthor" required>
+                    <option value="" disabled selected>Select author</option>
+                  </select>
+                </label>
+                <label class="field field-wide">
+                  <span>Story</span>
+                  <textarea id="jBody" rows="7" placeholder="Write the full story here" required></textarea>
+                </label>
+                <label class="field field-wide">
+                  <span>Photo (optional, up to 3 MB)</span>
+                  <input type="file" id="jImage" accept="image/*">
+                </label>
+                <button type="submit" class="laptime-submit">POST JOURNAL</button>
+              </form>
+              <p id="journalMsg" class="form-msg"></p>
+            </div>
+
+            <div class="dash-card">
+              <h3 class="dash-card-title">Posted journals</h3>
+              <div id="journalAdminList" class="my-laptimes-list"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+<section id="journal" class="journal-section">
+  <div class="section-container">
+    <div class="journal-feature">
+      <div class="journal-photo"><img loading="lazy" src="files/brrtbrrt_frontpage.jpg" alt="Ikazuchi drivers gathered around their cars"></div>
+      <div class="journal-copy">
+        <p class="section-label mono">In the paddock</p>
+        <h2 class="display section-title">The Club Journal</h2>
+        <p>Meets, cruises, race recaps, and updates from Ikazuchi. The journal brings club stories and driver posts together.</p>
+        <a class="text-link" href="journal.html">Explore the journal <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section id="gallery" class="gallery-section">
+  <div class="gallery-container">
+    <div class="gallery-heading">
+      <div><p class="gallery-label mono">Visual Log</p><h2 class="display gallery-title">Between the laps</h2></div>
+      <p class="gallery-intro">The small, focused moments that make up a race weekend.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure class="gallery-tile"><img loading="lazy" src="https://images.pexels.com/photos/28944070/pexels-photo-28944070.jpeg" alt="Exciting view of two race cars competing on a professional circuit, showcasing speed and competition."><figcaption>Circuit rhythm</figcaption></figure>
+      <figure class="gallery-tile"><img loading="lazy" src="https://images.pexels.com/photos/33856862/pexels-photo-33856862.jpeg" alt="White racing helmet resting on a surface with a sunset backdrop, emphasizing motorsport passion."><figcaption>Ready line</figcaption></figure>
+      <figure class="gallery-tile"><img loading="lazy" src="https://images.pexels.com/photos/11876709/pexels-photo-11876709.jpeg" alt="A sleek orange racing car inside a garage workshop with two mechanics discussing in the background."><figcaption>Garage</figcaption></figure>
+      <figure class="gallery-tile"><img loading="lazy" src="https://images.pexels.com/photos/14401742/pexels-photo-14401742.jpeg" alt="Pit crew working on race cars at a motorsport event in Mexico City."><figcaption>Pit lane</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="join-section">
+
+        <div class="join-container">
+
+          <div class="join-content">
+            <p class="join-label mono">Join the club</p>
+            <h2 class="display join-title">Start your next lap.</h2>
+            <p class="join-description">
+              Tell us a little about yourself and how you would like
+              to be part of the Ikazuchi paddock.
+            </p>
+          </div>
+
+          <div class="join-contact">
+            <div class="join-contact-item">
+              <span class="join-contact-icon join-email-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 6.5h17v11h-17z" stroke="currentColor" stroke-width="1.7"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span>ikazuchiracingclub@gmail.com</span>
+            </div>
+            <div class="join-contact-item">
+              <span class="join-contact-icon join-facebook-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.9v8h3.6z"/></svg></span>
+              <span>Ikazuchi Racing Club</span>
+            </div>
+            <div class="join-contact-item">
+              <span class="join-contact-icon join-instagram-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.8" r="1" fill="currentColor"/></svg></span>
+              <span>Ikazuchi Racing Club</span>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+<footer class="site-footer">
+      <div class="footer-inner">
+        <p class="mono footer-name">Ikazuchi Racing Club</p>
+      </div>
+    </footer>
+
+  </div>
+
+<div id="loginOverlay" class="login-overlay">
+    <div class="login-box">
+      <button id="loginClose" class="login-close" aria-label="Close access code dialog">&times</button>
+      <p class="mono login-kicker">Ikazuchi</p>
+      <h2 class="display login-title">Driver Access</h2>
+      <p class="login-sub">Enter the club access code to edit leaderboard laptimes and post journals.</p>
+      <form id="loginForm" class="login-form">
+        <label class="access-code-label" for="loginPassword">Club access code</label>
+        <input type="password" id="loginPassword" placeholder="Enter access code" autocomplete="current-password" aria-describedby="loginError" required>
+        <button type="submit" class="login-submit" id="loginSubmitBtn">OPEN DRIVER PORTAL</button>
+      </form>
+      <p class="login-error" id="loginError"></p>
+    </div>
+  </div>
+
+  <script>
+    const $ = s => document.querySelector(s);
+    const mobileToggle = $('#mobileMenuToggle');
+    const mobileMenu = $('#mobileMenu');
+    mobileToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }));
+    const loginBtn = $('#loginBtn');
+    const loginOverlay = $('#loginOverlay');
+    const loginClose = $('#loginClose');
+    const loginForm = $('#loginForm');
+    const loginError = $('#loginError');
+    const loginSubmitBtn = $('#loginSubmitBtn');
+    const myLapTimesSection = $('#my-laptimes');
+    const loggedInAs = $('#loggedInAs');
+    const lapTimeForm = $('#lapTimeForm');
+    const formMsg = $('#formMsg');
+    const myLapTimesList = $('#myLapTimesList');
+    const filterDriver = $('#filterDriver');
+    const logoutBtn = $('#logoutBtn');
+
+    let currentAdmin = null;
+    let currentLapTimes = [];
+
+    const TIME_RE = /^\d{1,2}:\d{2}\.\d{3}$/;
+    const TIME_HINT = 'Leaderboard laptime must look like 1:23.456 (minutes:seconds.milliseconds).';
+
+    function escapeHtml(s) {
+      return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    function formatDate(iso) {
+      try { return new Date(iso).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }); }
+      catch { return ''; }
+    }
+
+    let officialRunRows = [];
+    let officialRunsLoadError = false;
+
+    function populateRunFilter(id, label, values) {
+      const select = $('#' + id);
+      const selected = select.value;
+      const uniqueValues = Array.from(new Set(values.filter(Boolean)));
+      select.innerHTML = '<option value="">All ' + label + '</option>' + optionsHtml(uniqueValues, selected);
+    }
+
+    function populateOfficialRunFilters() {
+      const drivers = Array.from(document.querySelectorAll('#drivers .driver-card h3')).map(node => node.textContent.trim()).concat(officialRunRows.map(row => row.driver_name || ''));
+      const maps = KNOWN_TRACKS.concat(officialRunRows.map(row => row.map || row.track || ''));
+      const races = Object.values(KNOWN_RACES_BY_MAP).flat().concat(officialRunRows.map(row => row.race || ''));
+      const inputs = KNOWN_INPUTS.concat(officialRunRows.map(row => row.input_method || ''));
+      populateRunFilter('runFilterDriver', 'drivers', drivers);
+      populateRunFilter('runFilterMap', 'maps', maps);
+      populateRunFilter('runFilterRace', 'races', races);
+      populateRunFilter('runFilterInput', 'inputs', inputs);
+    }
+
+    function renderOfficialRuns() {
+      const tbody = $('#officialRunsBody');
+      const filters = {
+        driver: $('#runFilterDriver').value,
+        map: $('#runFilterMap').value,
+        race: $('#runFilterRace').value,
+        input: $('#runFilterInput').value
+      };
+      const rows = officialRunRows.filter(row =>
+        (!filters.driver || row.driver_name === filters.driver) &&
+        (!filters.map || (row.map || row.track) === filters.map) &&
+        (!filters.race || row.race === filters.race) &&
+        (!filters.input || row.input_method === filters.input)
+      );
+      if (!rows.length) {
+        const message = officialRunsLoadError
+          ? 'Event times are temporarily unavailable.'
+          : officialRunRows.length
+            ? 'No event times match these filters.'
+            : 'No event times have been posted yet.';
+        tbody.innerHTML = '<tr><td colspan="7">' + escapeHtml(message) + '</td></tr>';
+        $('#officialRunsStatus').textContent = officialRunsLoadError ? 'Unable to load runs' : '0 runs shown';
+        return;
+      }
+      tbody.innerHTML = rows.map(row => '<tr>' +
+        '<td>' + escapeHtml(row.driver_name) + '</td>' +
+        '<td>' + escapeHtml(row.map || row.track) + '</td>' +
+        '<td>' + escapeHtml(row.race || 'Race not recorded') + '</td>' +
+        '<td>' + escapeHtml(row.car || 'Car not recorded') + '</td>' +
+        '<td class="time">' + escapeHtml(row.leaderboard_laptime || row.time) + '</td>' +
+        '<td>' + escapeHtml(row.input_method || 'Not recorded') + '</td>' +
+        '<td>' + escapeHtml(formatDate(row.created_at)) + '</td>' +
+        '</tr>').join('');
+      $('#officialRunsStatus').textContent = rows.length + (rows.length === 1 ? ' run shown' : ' runs shown');
+    }
+
+    async function loadOfficialRuns() {
+      const tbody = $('#officialRunsBody');
+      if (typeof supabaseClient === 'undefined' || !supabaseClient) {
+        officialRunsLoadError = true;
+        renderOfficialRuns();
+        return;
+      }
+      officialRunsLoadError = false;
+      $('#officialRunsStatus').textContent = 'Loading event times...';
+      try {
+        const { data, error } = await supabaseClient
+          .from('lap_times')
+          .select('driver_name, map, race, car, input_method, leaderboard_laptime, track, time, created_at')
+          .order('created_at', { ascending: false })
+          .limit(200);
+        if (error) throw error;
+        officialRunRows = data || [];
+        populateOfficialRunFilters();
+        renderOfficialRuns();
+      } catch (err) {
+        officialRunsLoadError = true;
+        officialRunRows = [];
+        tbody.innerHTML = '<tr><td colspan="7">Event times are temporarily unavailable.</td></tr>';
+        $('#officialRunsStatus').textContent = 'Unable to load runs';
+        console.error('Could not load official runs:', err);
+      }
+    }
+    const optionsHtml = (list, selected = '') =>
+      list.map(v => `<option value="${escapeHtml(v)}" ${v === selected ? 'selected' : ''}>${escapeHtml(v)}</option>`).join('');
+
+    function populateRaceSelect(select, map, selected = '') {
+      const races = KNOWN_RACES_BY_MAP[map] || [];
+      select.innerHTML = races.length
+        ? '<option value="" disabled>Select race</option>' + optionsHtml(races, selected || races[0])
+        : '<option value="" disabled selected>Select a map first</option>';
+      select.disabled = !races.length;
+      if (selected && races.includes(selected)) select.value = selected;
+    }
+
+    function configReady() {
+      return !!supabaseClient && !String(SUPABASE_URL).includes('YOUR_');
+    }
+
+    async function clubApi(action, payload = {}) {
+      const accessCode = sessionStorage.getItem('ikazuchiClubAccess');
+      if (!accessCode) throw new Error('Enter the club access code to continue.');
+      const { data, error } = await supabaseClient.functions.invoke('club-portal', {
+        body: { action, accessCode, ...payload }
+      });
+      if (error) throw error;
+      if (data?.error) throw new Error(data.error);
+      return data;
+    }
+
+    function showMsg(text, isError) {
+      formMsg.textContent = text;
+      formMsg.className = 'form-msg' + (isError ? ' is-error' : '');
+    }
+
+    function openLogin() { loginOverlay.classList.add('open'); document.body.classList.add('no-scroll'); setTimeout(() => $('#loginPassword').focus(), 120); }
+    function closeLogin() { loginOverlay.classList.remove('open'); document.body.classList.remove('no-scroll'); loginError.textContent = ''; }
+
+    loginBtn.addEventListener('click', () => {
+      if (currentAdmin) myLapTimesSection.scrollIntoView({ behavior: 'smooth' });
+      else openLogin();
+    });
+    loginClose.addEventListener('click', closeLogin);
+    loginOverlay.addEventListener('click', e => { if (e.target === loginOverlay) closeLogin(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLogin(); });
+
+    loginForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      loginError.textContent = '';
+
+      if (!configReady()) {
+        loginError.textContent = "Supabase isn't set up yet. Add your URL and key in supabase-config.js.";
+        return;
+      }
+
+      const accessCode = $('#loginPassword').value;
+
+      loginSubmitBtn.disabled = true;
+      loginSubmitBtn.textContent = 'VERIFYING...';
+      try {
+        const { data, error } = await supabaseClient.functions.invoke('club-portal', { body: { action: 'verify', accessCode } });
+        if (error) throw error;
+        if (!data?.ok) throw new Error(data?.error || 'Invalid club access code.');
+        sessionStorage.setItem('ikazuchiClubAccess', accessCode);
+        loginForm.reset();
+        closeLogin();
+        await refreshAuthUI();
+        myLapTimesSection.scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        loginError.textContent = err instanceof Error ? err.message : String(err);
+      } finally {
+        loginSubmitBtn.disabled = false;
+        loginSubmitBtn.textContent = 'OPEN DRIVER PORTAL';
+      }
+    });
+
+    logoutBtn.addEventListener('click', async () => {
+      sessionStorage.removeItem('ikazuchiClubAccess');
+      await refreshAuthUI();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    $('#ltDriver').insertAdjacentHTML('beforeend', optionsHtml(KNOWN_DRIVERS));
+    $('#ltTrack').insertAdjacentHTML('beforeend', optionsHtml(KNOWN_TRACKS));
+    $('#ltInput').insertAdjacentHTML('beforeend', optionsHtml(KNOWN_INPUTS));
+    $('#ltTrack').addEventListener('change', () => populateRaceSelect($('#ltRace'), $('#ltTrack').value));
+    filterDriver.insertAdjacentHTML('beforeend', optionsHtml(KNOWN_DRIVERS));
+    $('#carList').innerHTML = KNOWN_CARS.map(car => `<option value="${escapeHtml(car)}"></option>`).join('');
+    filterDriver.addEventListener('change', renderLapTimesList);
+    ['runFilterDriver', 'runFilterMap', 'runFilterRace', 'runFilterInput'].forEach(id => $('#' + id).addEventListener('change', renderOfficialRuns));
+    $('#refreshOfficialRuns').addEventListener('click', loadOfficialRuns);
+
+    lapTimeForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      showMsg('');
+
+      const leaderboardLaptime = $('#ltTime').value.trim();
+      if (!TIME_RE.test(leaderboardLaptime)) { showMsg(TIME_HINT, true); return; }
+
+      try {
+        await clubApi('create-lap', {
+          driver_name: $('#ltDriver').value,
+          map: $('#ltTrack').value,
+          race: $('#ltRace').value,
+          car: $('#ltCar').value.trim(),
+          input_method: $('#ltInput').value,
+          leaderboard_laptime: leaderboardLaptime
+        });
+        lapTimeForm.reset();
+        $('#ltRace').innerHTML = '<option value="" disabled selected>Select a map first</option>';
+        $('#ltRace').disabled = true;
+        showMsg('Leaderboard laptime posted.');
+        await loadLapTimes();
+      } catch (err) {
+        showMsg('Could not post: ' + (err.message || err), true);
+      }
+    });
+
+    async function loadLapTimes() {
+      if (!currentAdmin) { myLapTimesList.innerHTML = ''; return; }
+      const { data, error } = await supabaseClient
+        .from('lap_times')
+        .select('*')
+        .order('created_at', { ascending: false });
+      if (error) { myLapTimesList.innerHTML = '<p class="section-description">Could not load leaderboard laptimes.</p>'; return; }
+      currentLapTimes = data;
+      renderLapTimesList();
+      await loadOfficialRuns();
+    }
+
+    function renderLapTimesList() {
+      const who = filterDriver.value;
+      const rows = currentLapTimes.filter(r => !who || r.driver_name === who);
+      if (!rows.length) {
+        myLapTimesList.innerHTML = '<p class="section-description">' + (who ? 'No leaderboard laptimes for this driver yet.' : 'No leaderboard laptimes posted yet.') + '</p>';
+        return;
+      }
+      myLapTimesList.innerHTML = rows.map(row => `
+        <div class="my-laptime-row" data-id="${escapeHtml(row.id)}">
+          <span><b>${escapeHtml(row.driver_name)}</b> &middot; ${escapeHtml(row.map || row.track)} &middot; ${escapeHtml(row.race || 'Race not recorded')} &middot; ${escapeHtml(row.car || 'Car not recorded')} &middot; ${escapeHtml(row.input_method || 'Input not recorded')} &middot; <span class="mono">${escapeHtml(row.leaderboard_laptime || row.time)}</span> &middot; <span style="color:var(--muted)">Posted ${formatDate(row.created_at)}</span></span>
+          <span class="my-laptime-actions">
+            <button class="my-laptime-edit" data-id="${escapeHtml(row.id)}">Edit</button>
+            <button class="my-laptime-delete" data-id="${escapeHtml(row.id)}">Delete</button>
+          </span>
+        </div>
+      `).join('');
+    }
+
+    function startEdit(id) {
+      const row = currentLapTimes.find(r => r.id === id);
+      const el = myLapTimesList.querySelector(`[data-id="${id}"]`);
+      if (!row || !el) return;
+      el.innerHTML = `
+        <div class="my-laptime-edit-form">
+          <select class="edit-driver">${optionsHtml(KNOWN_DRIVERS, row.driver_name)}</select>
+          <select class="edit-track">${optionsHtml(KNOWN_TRACKS, row.map || row.track)}</select>
+          <select class="edit-race"></select>
+          <input class="edit-car" list="carList" value="${escapeHtml(row.car)}" placeholder="Car">
+          <select class="edit-input" required><option value="" disabled ${row.input_method ? '' : 'selected'}>Select input</option>${optionsHtml(KNOWN_INPUTS, row.input_method || '')}</select>
+          <input class="edit-time" value="${escapeHtml(row.leaderboard_laptime || row.time)}" placeholder="1:23.456">
+          <span class="my-laptime-actions">
+            <button class="my-laptime-save" data-id="${escapeHtml(id)}">Save</button>
+            <button class="my-laptime-cancel">Cancel</button>
+          </span>
+        </div>
+      `;
+      const trackSelect = el.querySelector('.edit-track');
+      const raceSelect = el.querySelector('.edit-race');
+      populateRaceSelect(raceSelect, trackSelect.value, row.race || '');
+      trackSelect.addEventListener('change', () => populateRaceSelect(raceSelect, trackSelect.value));
+    }
+
+    async function saveEdit(id) {
+      const el = myLapTimesList.querySelector(`[data-id="${id}"]`);
+      const leaderboardLaptime = el.querySelector('.edit-time').value.trim();
+      if (!TIME_RE.test(leaderboardLaptime)) { alert(TIME_HINT); return; }
+      const inputMethod = el.querySelector('.edit-input').value;
+      if (!inputMethod) { alert('Choose Keyboard, Mouse, Controller, or Wheel for input.'); return; }
+      const payload = {
+        driver_name: el.querySelector('.edit-driver').value,
+        map: el.querySelector('.edit-track').value,
+        race: el.querySelector('.edit-race').value,
+        car: el.querySelector('.edit-car').value.trim(),
+        input_method: inputMethod,
+        leaderboard_laptime: leaderboardLaptime
+      };
+      try {
+        await clubApi('update-lap', { id, ...payload });
+        await loadLapTimes();
+      } catch (err) { alert('Could not save: ' + (err.message || err)); }
+    }
+
+    myLapTimesList.addEventListener('click', async e => {
+      const editBtn = e.target.closest('.my-laptime-edit');
+      if (editBtn) { startEdit(editBtn.dataset.id); return; }
+
+      const saveBtn = e.target.closest('.my-laptime-save');
+      if (saveBtn) { await saveEdit(saveBtn.dataset.id); return; }
+
+      if (e.target.closest('.my-laptime-cancel')) { renderLapTimesList(); return; }
+
+      const delBtn = e.target.closest('.my-laptime-delete');
+      if (delBtn) {
+        if (!confirm('Delete this leaderboard laptime?')) return;
+        try {
+          await clubApi('delete-lap', { id: delBtn.dataset.id });
+          await loadLapTimes();
+        } catch (err) { alert('Could not delete: ' + (err.message || err)); }
+      }
+    });
+
+    document.querySelectorAll('.dash-tab').forEach(btn => btn.addEventListener('click', () => {
+      document.querySelectorAll('.dash-tab').forEach(b => b.classList.toggle('on', b === btn));
+      $('#panelLaps').style.display = btn.dataset.tab === 'laps' ? 'block' : 'none';
+      $('#panelJournals').style.display = btn.dataset.tab === 'journals' ? 'block' : 'none';
+    }));
+
+    const journalForm = $('#journalForm');
+    const journalMsg = $('#journalMsg');
+    const journalAdminList = $('#journalAdminList');
+    let currentJournals = [];
+    $('#jAuthor').insertAdjacentHTML('beforeend', optionsHtml(KNOWN_DRIVERS));
+
+    function showJournalMsg(text, isError) {
+      journalMsg.textContent = text;
+      journalMsg.className = 'form-msg' + (isError ? ' is-error' : '');
+    }
+
+    async function uploadJournalImage(file) {
+      if (!file.type.startsWith('image/')) throw new Error('That file is not an image.');
+      if (file.size > 3 * 1024 * 1024) throw new Error('Photo is over 3 MB. Please use a smaller one.');
+      const dataUrl = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(new Error('Could not read the selected photo.'));
+        reader.readAsDataURL(file);
+      });
+      const base64 = String(dataUrl).split(',')[1];
+      const result = await clubApi('upload-image', { base64, contentType: file.type });
+      return result.image_url;
+    }
+
+    async function removeStoredImage(url) {
+      try {
+        await clubApi('remove-image', { image_url: url });
+      } catch (err) {  }
+    }
+
+    async function loadJournals() {
+      if (!configReady()) {
+        if (currentAdmin) journalAdminList.innerHTML = '<p class="section-description">Journal entries will appear once the database is connected.</p>';
+        return;
+      }
+      const { data, error } = await supabaseClient
+        .from('journals')
+        .select('*')
+        .order('created_at', { ascending: false });
+      if (error) {
+        if (currentAdmin) journalAdminList.innerHTML = '<p class="section-description">Could not load journal entries right now.</p>';
+        return;
+      }
+      currentJournals = data || [];
+      renderAdminJournals();
+    }
+    function renderAdminJournals() {
+      if (!currentAdmin) { journalAdminList.innerHTML = ''; return; }
+      if (!currentJournals.length) {
+        journalAdminList.innerHTML = '<p class="section-description">No journals posted yet.</p>';
+        return;
+      }
+      journalAdminList.innerHTML = currentJournals.map(j => `
+        <div class="my-laptime-row" data-jid="${escapeHtml(j.id)}">
+          <span><b>${escapeHtml(j.title)}</b> &middot; ${escapeHtml(j.author)} <span style="color:var(--muted)">${formatDate(j.created_at)}${j.image_url ? ' &middot; with photo' : ''}</span></span>
+          <span class="my-laptime-actions">
+            <button class="my-laptime-edit" data-id="${escapeHtml(j.id)}">Edit</button>
+            <button class="my-laptime-delete" data-id="${escapeHtml(j.id)}">Delete</button>
+          </span>
+        </div>
+      `).join('');
+    }
+
+    journalForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      showJournalMsg('');
+
+      const btn = journalForm.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'POSTING…';
+      try {
+        const file = $('#jImage').files[0];
+        const image_url = file ? await uploadJournalImage(file) : null;
+        await clubApi('create-journal', {
+          title: $('#jTitle').value.trim(),
+          author: $('#jAuthor').value,
+          story: $('#jBody').value.trim(),
+          image_url
+        });
+        journalForm.reset();
+        showJournalMsg('Journal posted. It is now live on the site.');
+        await loadJournals();
+      } catch (err) {
+        showJournalMsg('Could not post: ' + (err.message || err), true);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'POST JOURNAL';
+      }
+    });
+
+    function startJournalEdit(id) {
+      const j = currentJournals.find(x => x.id === id);
+      const el = journalAdminList.querySelector(`[data-jid="${id}"]`);
+      if (!j || !el) return;
+      el.innerHTML = `
+        <div class="j-edit-form">
+          <input type="text" class="je-title" maxlength="120" value="${escapeHtml(j.title)}" placeholder="Title">
+          <select class="je-author">${optionsHtml(KNOWN_DRIVERS, j.author)}</select>
+          <textarea class="je-body" rows="7">${escapeHtml(j.body)}</textarea>
+          <label class="je-row">Replace photo: <input type="file" class="je-image" accept="image/*"></label>
+          ${j.image_url ? '<label class="je-row"><input type="checkbox" class="je-remove-img"> Remove current photo</label>' : ''}
+          <span class="my-laptime-actions">
+            <button class="my-laptime-save" data-id="${escapeHtml(id)}">Save</button>
+            <button class="my-laptime-cancel">Cancel</button>
+          </span>
+        </div>
+      `;
+    }
+
+    async function saveJournalEdit(id) {
+      const j = currentJournals.find(x => x.id === id);
+      const el = journalAdminList.querySelector(`[data-jid="${id}"]`);
+      if (!j || !el) return;
+      const title = el.querySelector('.je-title').value.trim();
+      const body = el.querySelector('.je-body').value.trim();
+      if (!title || !body) { alert('Title and story can\'t be empty.'); return; }
+      try {
+        let image_url = j.image_url;
+        const removeBox = el.querySelector('.je-remove-img');
+        if (removeBox && removeBox.checked) image_url = null;
+        const newFile = el.querySelector('.je-image').files[0];
+        if (newFile) image_url = await uploadJournalImage(newFile);
+
+        await clubApi('update-journal', { id, title, author: el.querySelector('.je-author').value, story: body, image_url });
+        if (j.image_url && j.image_url !== image_url) removeStoredImage(j.image_url);
+        await loadJournals();
+      } catch (err) {
+        alert('Could not save: ' + (err.message || err));
+      }
+    }
+
+    journalAdminList.addEventListener('click', async e => {
+      const editBtn = e.target.closest('.my-laptime-edit');
+      if (editBtn) { startJournalEdit(editBtn.dataset.id); return; }
+
+      const saveBtn = e.target.closest('.my-laptime-save');
+      if (saveBtn) { await saveJournalEdit(saveBtn.dataset.id); return; }
+
+      if (e.target.closest('.my-laptime-cancel')) { renderAdminJournals(); return; }
+
+      const delBtn = e.target.closest('.my-laptime-delete');
+      if (delBtn) {
+        const j = currentJournals.find(x => x.id === delBtn.dataset.id);
+        if (!confirm('Delete this journal? This can\'t be undone.')) return;
+        try {
+          await clubApi('delete-journal', { id: delBtn.dataset.id });
+          if (j && j.image_url) await removeStoredImage(j.image_url);
+          await loadJournals();
+        } catch (err) { alert('Could not delete: ' + (err.message || err)); }
+      }
+    });
+
+    async function refreshAuthUI() {
+      if (!configReady()) return;
+      const savedCode = sessionStorage.getItem('ikazuchiClubAccess');
+      currentAdmin = null;
+      if (savedCode) {
+        try {
+          await clubApi('verify');
+          currentAdmin = { email: 'Club member' };
+        } catch (err) {
+          sessionStorage.removeItem('ikazuchiClubAccess');
+          console.error('Could not verify club access:', err);
+        }
+      }
+      if (currentAdmin) {
+        loginBtn.textContent = 'Dashboard';
+        myLapTimesSection.style.display = 'block';
+        loggedInAs.textContent = 'Shared club access is active. Manage leaderboard laptimes here; changes appear automatically on the matching driver profile.';
+        loadLapTimes();
+        renderAdminJournals();
+      } else {
+        loginBtn.textContent = 'Access code';
+        myLapTimesSection.style.display = 'none';
+        myLapTimesList.innerHTML = '';
+        journalAdminList.innerHTML = '';
+      }
+    }
+
+    loadOfficialRuns();
+    loadJournals();
+
+    if (configReady()) {
+      refreshAuthUI();
+    }
+  </script>
+
+</body>
+
+</html>
+
+
