@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HieuHarry · Ikazuchi Racing Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/driver.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+</head>
+<body>
+  <div class="site-shell" id="top">
+    <header class="site-header">
+      <nav class="nav-row driver-nav" aria-label="Main navigation">
+        <a href="index.html" class="club-mark"><span>Ikazuchi</span><span>Racing Club</span></a>
+        <a href="index.html" class="back-link">Back to club</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="driver-hero" style="--driver-photo: url('/files/race.png');" aria-labelledby="driver-title">
+        <div class="driver-hero-info">
+          <p class="hero-kicker">Driver profile</p>
+          <span class="badge-role">Member</span>
+          <h1 class="driver-title" id="driver-title">HieuHarry</h1>
+          <div class="hero-bottom">
+            <a class="scroll-link" href="#events">View event times <span>↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="driver-description" id="driver-description" aria-labelledby="driver-description-title">
+  <div class="driver-description-inner">
+          <aside class="driver-highlight" aria-label="Driver role">
+            <p class="highlight-label">Driver role</p>
+            <img class="highlight-photo" src="files/race.png" alt="HieuHarry profile photo">
+            <span class="highlight-input">Keyboard</span>
+          </aside>
+    <div class="driver-description-content">
+      <p class="driver-description-label">Driver story</p>
+      <h2 class="driver-description-title" id="driver-description-title">HieuHarry</h2>
+      <p class="driver-bio">Harry, the brother of Kaizen, is determined to make his own mark in the world of competitive racing. Despite often being underestimated, he has proven himself to be a formidable competitor, capable of achieving Goliath Marathon event times below five minutes using keyboard controls. With over 10,000 laps under his belt, Harry's dedication, consistency, and driving skills have made him a dangerous opponent on any track. His experience reflects countless hours of practice, learning, and refining his technique in pursuit of better lap times.</p>
+<p class="driver-bio">Known in the <em>Midnight Racing: Tokyo</em> community, particularly among players from the Philippines and Vietnam, HieuHarry has become a respected figure for more than just his racing ability. His sportsmanship, eagerness to learn, and willingness to share his knowledge with fellow drivers have earned him the respect of the community. He believes that racing is not solely about winning, but also about learning from others, exchanging ideas, and helping fellow enthusiasts improve their skills. His approachable and friendly personality extends both on and off the track, making him a valued friend and competitor alike.</p>
+<p class="driver-bio">Beyond driving, Harry has developed an interest in car tuning, exploring different setups and adjustments to push his vehicles to their limits. He continually seeks to understand how tuning affects handling, stability, and overall performance, allowing him to approach racing with both technical curiosity and practical experience. Whether chasing a new personal best or experimenting with a different setup, he remains committed to improving every aspect of his craft.</p>
+<p class="driver-bio">Outside the virtual racing scene, Harry is currently pursuing his college education, working toward another one of his dreams beyond racing. Balancing his academic responsibilities with his passion for motorsports reflects his determination to grow not only as a driver but also as an individual. While racing remains an important part of his life, he understands that there are ambitions worth pursuing beyond the track.</p>
+<p class="driver-bio"><strong>For Harry, the journey is about more than lap times and victories; it is about becoming a better driver, supporting the community, and pursuing his dreams both on and off the track.</strong></p>
+    </div>
+  </div>
+</section>
+
+      <section class="laptimes-section" id="events" aria-labelledby="events-title">
+        <div class="events-inner">
+          <div class="events-head">
+            <div>
+              <p class="eyebrow">Club results</p>
+              <h2 class="events-title" id="events-title">Event times</h2>
+            </div>
+            <p class="events-description">Map, race, car, input method, time, and post date for this driver.</p>
+          </div>
+          <div id="laptimesContainer">
+            <p>Loading event times…</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="mono footer-name">Ikazuchi Racing Club</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/driver-laptimes.js"></script>
+</body>
+</html>
+
+
+
