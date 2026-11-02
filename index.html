@@ -330,7 +330,7 @@
                 </label>
                 <label class="field">
                   <span>Leaderboard laptime</span>
-                  <input type="text" id="ltTime" placeholder="1:23.456" inputmode="numeric"
+                  <input type="text" id="ltTime" placeholder="1:23.456" inputmode="text"
                          pattern="\d{1,2}:\d{2}\.\d{3}" title="Format: 1:23.456 (minutes:seconds.milliseconds)" required>
                 </label>
                 <label class="field">
@@ -763,7 +763,7 @@
           <select class="edit-race"></select>
           <input class="edit-car" list="carList" value="${escapeHtml(row.car)}" placeholder="Car">
           <select class="edit-input" required><option value="" disabled ${row.input_method ? '' : 'selected'}>Select input</option>${optionsHtml(KNOWN_INPUTS, row.input_method || '')}</select>
-          <input class="edit-time" value="${escapeHtml(row.leaderboard_laptime || row.time)}" placeholder="1:23.456">
+          <input class="edit-time" type="text" inputmode="text" value="${escapeHtml(row.leaderboard_laptime || row.time)}" placeholder="1:23.456">
           <span class="my-laptime-actions">
             <button class="my-laptime-save" data-id="${escapeHtml(id)}">Save</button>
             <button class="my-laptime-cancel">Cancel</button>
@@ -1012,5 +1012,4 @@
 </body>
 
 </html>
-
 
