@@ -7,8 +7,8 @@
 
   <title>Ikazuchi Racing Club</title>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Michroma&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
     rel="stylesheet">
 
 <link rel="stylesheet" href="css/styles.css">
@@ -1008,8 +1008,24 @@
       refreshAuthUI();
     }
   </script>
+  <script>
+    if ('IntersectionObserver' in window) {
+      const scrollRevealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('main > section:not(.hero)').forEach(section => {
+        section.classList.add('scroll-reveal');
+        scrollRevealObserver.observe(section);
+      });
+    }
+  </script>
 
 </body>
 
 </html>
-

@@ -448,6 +448,20 @@ a {
 
 }
 
+.scroll-reveal {
+
+  opacity: 0;
+
+  transform: translateY(22px);
+
+}
+
+.scroll-reveal.is-visible {
+
+  animation: rise 0.8s both;
+
+}
+
 @keyframes rise {
 
   from {
@@ -690,110 +704,6 @@ a {
 
 
 
-.journal-grid {
-
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 20px;
-
-}
-
-.journal-card {
-
-  position: relative;
-
-  height: 220px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  padding: 22px;
-
-  overflow: hidden;
-
-  background: var(--dark-card);
-
-  color: inherit;
-
-  text-decoration: none;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-
-}
-
-.journal-card:hover {
-
-  background: var(--dark-card-hover);
-
-  transform: translateY(-2px);
-
-}
-
-.journal-card h3 {
-
-  margin: 0 0 6px;
-
-  font-size: 17px;
-
-  line-height: 1.35;
-
-}
-
-.journal-card small {
-
-  color: #8f939b;
-
-  font-size: 12px;
-
-}
-
-.journal-card p {
-
-  margin-top: 10px;
-
-  flex: 1;
-
-  overflow: hidden;
-
-  color: #a8a69f;
-
-  font-size: 14px;
-
-  line-height: 1.6;
-
-  -webkit-mask-image:
-    linear-gradient(180deg,
-      #000 50%,
-      transparent 92%);
-
-  mask-image:
-    linear-gradient(180deg,
-      #000 50%,
-      transparent 92%);
-
-}
-
-.readmore {
-
-  margin-top: auto;
-
-  padding-top: 8px;
-
-  color: var(--signal);
-
-  font-family: "Space Mono", monospace;
-
-  font-size: 12px;
-
-  letter-spacing: 0.05em;
-
-}
-
 .site-footer {
 
   padding: 32px;
@@ -983,20 +893,6 @@ a {
   .journal-section {
 
     padding: 80px 20px;
-
-  }
-
-  .journal-grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .journal-card {
-
-    height: auto;
-
-    min-height: 220px;
 
   }
 
@@ -1952,44 +1848,6 @@ select:focus-visible {
 }
 
 
-.journal-grid {
-  gap: 1px;
-  background: #c8c3b9;
-}
-
-.journal-card {
-  min-height: 220px;
-  height: auto;
-  padding: 22px;
-  background: #faf8f1;
-  color: var(--ink);
-}
-
-.journal-card:hover {
-  background: #fffdf7;
-  transform: none;
-}
-
-.journal-card h3 {
-  font-family: "Michroma", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.journal-card small,
-.journal-card p {
-  color: #625f58;
-}
-
-.journal-card p {
-  -webkit-mask-image: none;
-  mask-image: none;
-}
-
-.readmore {
-  color: var(--signal);
-}
-
 .gallery-section {
   padding: 80px 32px;
   background-color: var(--ink);
@@ -2115,10 +1973,6 @@ select:focus-visible {
     padding: 64px 20px;
   }
 
-
-  .journal-grid {
-    grid-template-columns: 1fr;
-  }
 
   .join-contact {
     min-height: 84px;
@@ -2615,10 +2469,6 @@ select:focus-visible {
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase
-}
-
-.journal-grid {
-  margin-top: 0
 }
 
 .gallery-section {
